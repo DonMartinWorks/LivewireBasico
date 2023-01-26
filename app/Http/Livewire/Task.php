@@ -23,10 +23,22 @@ class Task extends Component
         $this->task = new TaskModel();
     }
 
+    //Para actualizar en tiempo real
+    /**
+     * aqui se colocan las reglas para verificar, pero para enviar en tiempo real ciertas reglas en especifico
+     * En este caso para no decir que es required
+     * y/o agregar una nuevas reglas
+     */
+    public function updatedTaskTitle()
+    {
+        //$this->validate(['task.title' => 'min:2|max:50']);
+        $this->validate(['task.title' => 'max:50']);
+    }
+
     //Para guardar una tarea
     public function save()
     {
-        $this->validate();
+        $this->validate(); // Recibe todas la reglas de validacion
         $this->task->save();
 
         $this->mount();
