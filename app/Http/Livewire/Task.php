@@ -42,7 +42,8 @@ class Task extends Component
         $this->task->save();
 
         $this->mount();
-        session()->flash('message', 'Se creó la nueva tarea');
+
+        $this->emitUp('taskSaved', 'Se realizó el guardado correctamente!');
     }
 
     //Para ver el componente task (livewire)

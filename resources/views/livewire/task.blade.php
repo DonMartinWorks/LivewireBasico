@@ -15,10 +15,7 @@
         hover:bg-teal-300">Guardar</button>
     </form>
 
-    @if (session()->has('message'))
-        <h3 class="bg-purple-500 mb-4 p-3 text-sm text-center text-yellow-400 font-bold uppercase rounded">
-            {{ session('message') }}</h3>
-    @endif
+
 
     <table class="shadow-md">
         <thead>
