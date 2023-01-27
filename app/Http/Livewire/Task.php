@@ -35,6 +35,12 @@ class Task extends Component
         $this->validate(['task.title' => 'max:50']);
     }
 
+    //Metodo para editar una task pidiendo su ID, pero llamando $task
+    public function edit(TaskModel $task)
+    {
+        $this->task = $task;
+    }
+
     //Para guardar una tarea
     public function save()
     {
