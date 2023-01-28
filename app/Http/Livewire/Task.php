@@ -52,6 +52,18 @@ class Task extends Component
         $this->emitUp('taskSaved', 'Se realizó el guardado correctamente!');
     }
 
+    //Para eliminar la tarea por su ID (Forma sin model biding)
+    public function delete($id)
+    {
+        $tasktoDelete = TaskModel::find($id);
+
+        if (!is_null($tasktoDelete)) {
+            $tasktoDelete->delete();
+            $this->emitUp('taskSaved', 'Se eliminó la tarea correctamente!');
+            $this->mount();
+        }
+    }
+
     //Para ver el componente task (livewire)
     public function render()
     {

@@ -34,7 +34,7 @@
                     <td class="px-4 py-2 text-center">
                         <button wire:click="edit({{ $task->id }})" type="button"
                             class="bg-yellow-400 hover:bg-yellow-600 hover:text-white px-2 py-1 text-black text-xs rounded">Editar</button>
-                        <button type="button"
+                        <button wire:click="delete({{ $task->id }})" type="button"
                             class="bg-red-500 hover:bg-red-800 px-2 py-1 text-white text-xs rounded">Eliminar</button>
                     </td>
                 </tr>
