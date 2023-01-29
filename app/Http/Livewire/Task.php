@@ -41,6 +41,13 @@ class Task extends Component
         $this->task = $task;
     }
 
+    //Funcion para marcar la task como completa
+    public function done(TaskModel $task)
+    {
+        $task->update(['done' => !$task->done]);
+        $this->mount();
+    }
+
     //Para guardar una tarea
     public function save()
     {
